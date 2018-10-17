@@ -11,8 +11,10 @@ document.getElementById('loan-form').addEventListener('submit', submitFunction);
 
 
 function submitFunction(e){
+    document.getElementById('result').style.display='none';
     if(inputAmount.value<=0||inputInterest.value<=0||inputYears.value<=0){
-    document.getElementById('loading').style.display='block';
+        
+        document.getElementById('loading').style.display='block';
     setTimeout(() => {
         
         document.getElementById('loading').style.display='none';
@@ -37,3 +39,19 @@ function submitFunction(e){
     }
     e.preventDefault();
 }
+
+
+
+/*
+inputAmount.addEventListener('input', corecting);
+inputInterest.addEventListener('input', corecting);
+inputYears.addEventListener('input', corecting);
+function corecting(e){
+    if(String(e.target.value).length==0){
+        totalInterest.value='';
+        totalPayment.value='';
+        amountResult.value='';
+    }
+
+}
+*/
